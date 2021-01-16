@@ -38,5 +38,13 @@ class Main {
         long mergeElapsedTime = mergeEndTime - mergeStartTime;
         int[] mergeSortedArr = mergeSort.arr;
         System.out.println("Merge sorting: " + Arrays.toString(mergeSortedArr) + "; Time: " + mergeElapsedTime + " ns");
+
+        QuickSort quickSort = new QuickSort(arr, false);
+        long quickStartTime = System.nanoTime();
+        quickSort.sort(0, arr.length - 1);
+        long quickEndTime = System.nanoTime();
+        long quickElapsedTime = quickEndTime - quickStartTime;
+        int[] quickSortedArr = quickSort.arr;
+        System.out.println("Quick sorting: " + Arrays.toString(quickSortedArr) + "; Time: " + quickElapsedTime);
     }
 }
